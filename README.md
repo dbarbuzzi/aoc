@@ -12,7 +12,7 @@ pip install .
 
 ## Usage
 
-Once installed, run a command in the following format to see solutions for that year/date:
+Once installed, use the following command structure to process answers for that year/date:
 
 ```shell
 python -m aoc.y2024.d01  # runs the first day of 2024
