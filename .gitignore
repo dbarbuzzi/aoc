@@ -1,0 +1,10 @@
+__pycache__
+*.egg-info
+
+venv
+.venv
+
+.python-version
+
+# ignore full/per-account data files
+*-full

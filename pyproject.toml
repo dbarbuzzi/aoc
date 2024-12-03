@@ -1,0 +1,17 @@
+[project]
+name = "aoc"
+version = "2024.3.0"
+description = "Advent of Code solutions"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["rich ~= 13.9"]
+
+[project.optional-dependencies]
+dev = ["pytest ~= 8.3", "ruff ~= 0.8"]
+
+[tool.pytest.ini_options]
+minversion = "8.3"
+addopts = "-ra"
+
+[tool.ruff.lint]
+extend-select=["I"]
