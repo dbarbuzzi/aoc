@@ -61,16 +61,21 @@ def runner(parts: list[tuple[Part, int] | tuple[Part, int, str]]):
         sample_data_key = solution.sample_data_key or f"{day}-sample"
         if not (sample_data := input_data.get(sample_data_key)):
             raise RuntimeError("no sample data found for key '{sample_data_key}'")
-        answer = solution.func(sample_data)
 
-        answer_color = "green" if answer == part[1] else "red"
-        expected_color = "green" if answer == part[1] else "cyan"
+        try:
+            answer = solution.func(sample_data)
 
-        console.rule(f"{year} / {day} / PART {i}", style=answer_color)
-        console.print(
-            f"sample: [{answer_color}]{answer}[/{answer_color}] "
-            f"(expected: [{expected_color}]{part[1]}[/{expected_color}])"
-        )
+            answer_color = "green" if answer == part[1] else "red"
+            expected_color = "green" if answer == part[1] else "cyan"
 
-        # print full execution
-        print(f"  full: {solution.func(input_data[f"{day}-full"])}")
+            console.rule(f"{year} / {day} / PART {i}", style=answer_color)
+            console.print(
+                f"sample: [{answer_color}]{answer}[/{answer_color}] "
+                f"(expected: [{expected_color}]{part[1]}[/{expected_color}])"
+            )
+
+            # print full execution
+            print(f"  full: {solution.func(input_data[f"{day}-full"])}")
+        except NotImplementedError:
+            console.rule(f"{year} / {day} / PART {i}", style="yellow")
+            print("TODO")
