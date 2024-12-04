@@ -9,10 +9,10 @@ from aoc.y2024.d04 import part1, part2
 @pytest.mark.parametrize(
     ("part", "input_file", "expected"),
     [
-        pytest.param(part1, "data/2024/04-sample", 0_0, id="part1-sample"),
-        pytest.param(part1, "data/2024/04-full", 0_0, id="part1-full"),
-        pytest.param(part2, "data/2024/04-sample", 0_0, id="part2-sample"),
-        pytest.param(part2, "data/2024/04-full", 0_0, id="part2-full"),
+        pytest.param(part1, "data/2024/04-sample", 18, id="part1-sample"),
+        pytest.param(part1, "data/2024/04-full", 2593, id="part1-full"),
+        pytest.param(part2, "data/2024/04-sample", 9, id="part2-sample"),
+        pytest.param(part2, "data/2024/04-full", 1950, id="part2-full"),
     ],
 )
 def test_day_04(part: Part, input_file: str, expected: int):
